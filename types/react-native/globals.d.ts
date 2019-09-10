@@ -37,9 +37,9 @@ declare interface WindowOrWorkerGlobalScope {
 
 interface Blob {}
 
-declare class FormData {
+/* declare class FormData {
     append(name: string, value: any): void;
-}
+} */
 
 declare interface Body {
     readonly bodyUsed: boolean;
@@ -81,7 +81,7 @@ type BodyInit_ =
     | string
     | null;
 
-declare interface RequestInit {
+/* declare interface RequestInit {
     body?: BodyInit_;
     credentials?: RequestCredentials_;
     headers?: HeadersInit_;
@@ -91,7 +91,7 @@ declare interface RequestInit {
     mode?: RequestMode_;
     referrer?: string;
     window?: any;
-}
+} */
 
 declare interface Request extends Object, Body {
     readonly credentials: RequestCredentials_;
@@ -108,7 +108,7 @@ declare var Request: {
     new (input: Request | string, init?: RequestInit): Request;
 };
 
-declare type RequestInfo = Request | string;
+// declare type RequestInfo = Request | string;
 
 declare interface ResponseInit {
     headers?: HeadersInit_;
@@ -127,12 +127,12 @@ declare interface Response extends Object, Body {
     clone(): Response;
 }
 
-declare var Response: {
+/* declare var Response: {
     prototype: Response;
     new (body?: BodyInit_, init?: ResponseInit): Response;
     error: () => Response;
     redirect: (url: string, status?: number) => Response;
-};
+}; */
 
 type HeadersInit_ = Headers | string[][] | { [key: string]: string };
 type RequestCredentials_ = "omit" | "same-origin" | "include";
@@ -202,7 +202,7 @@ declare var XMLHttpRequest: {
     readonly UNSENT: number;
 };
 
-interface XMLHttpRequestEventTargetEventMap {
+/* interface XMLHttpRequestEventTargetEventMap {
     abort: ProgressEvent;
     error: ProgressEvent;
     load: ProgressEvent;
@@ -230,7 +230,7 @@ interface XMLHttpRequestEventTarget {
         listener: (this: XMLHttpRequestEventTarget, ev: XMLHttpRequestEventTargetEventMap[K]) => any
     ): void;
     //  removeEventListener(type: string, listener: EventListenerOrEventListenerObject): void;
-}
+} */
 
 interface XMLHttpRequestUpload extends EventTarget, XMLHttpRequestEventTarget {
     addEventListener<K extends keyof XMLHttpRequestEventTargetEventMap>(
@@ -250,12 +250,12 @@ declare var XMLHttpRequestUpload: {
     new (): XMLHttpRequestUpload;
 };
 
-declare type XMLHttpRequestResponseType = "" | "arraybuffer" | "blob" | "document" | "json" | "text";
+// declare type XMLHttpRequestResponseType = "" | "arraybuffer" | "blob" | "document" | "json" | "text";
 
 /**
  * Based on definitions of lib.dom and  lib.dom.iteralbe
  */
-declare class URLSearchParams {
+/* declare class URLSearchParams {
     constructor(init?: string[][] | Record<string, string> | string | URLSearchParams);
 
     append(name: string, value: string): void;
@@ -271,4 +271,4 @@ declare class URLSearchParams {
     entries(): IterableIterator<[string, string]>;
     keys(): IterableIterator<string>;
     values(): IterableIterator<string>;
-}
+} */
